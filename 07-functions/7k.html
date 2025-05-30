@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart quantity</title>
+</head>
+<body>
+  <p>Cart Quantity</p>
+  <button onclick="
+    console.log(`Cart quantity: ${cartQuantity}`);
+  ">Show Quantity</button>
+  
+  <button onclick="
+    updateCartQuantity('add', 1);
+  ">Add to Cart</button>
+
+  <button onclick="
+    updateCartQuantity('add', 2);
+  ">+2</button>
+
+  <button onclick="
+    updateCartQuantity('add', 3);
+  ">+3</button>
+
+  <button onclick="
+    updateCartQuantity('add', 4);
+  ">+4</button>
+
+  <button onclick="
+    updateCartQuantity('add', 5);
+  ">+5</button>
+
+  <button onclick="
+    cartQuantity = 0;
+    console.log('Cart was reset.');
+    console.log(`Cart quantity: ${cartQuantity}`);
+  ">Reset Cart</button>
+
+  <br>
+  
+  <button onclick="
+    updateCartQuantity('remove', 1);
+  ">Remove from Cart</button>
+
+  <button onclick="
+    updateCartQuantity('remove', 2);
+  ">-2</button>
+
+  <button onclick="
+    updateCartQuantity('remove', 3);
+  ">-3</button>
+
+  <script>
+    let cartQuantity = 0;
+    console.log(`Cart quantity: ${cartQuantity}`);
+
+    function updateCartQuantity(mode, amount) {
+      if (mode==='add') {
+        if (amount+cartQuantity > 10){
+          alert('The cart is full!');
+          return;
+        }
+        cartQuantity+=amount;
+      }
+      else {
+        if (cartQuantity-amount < 0) {
+          alert('Not enough items in the cart!');
+          return;
+        }
+        cartQuantity-=amount;
+      }
+      console.log(`Cart quantity: ${cartQuantity}`);
+    }
+  </script>
+
+</body>
+</html>
