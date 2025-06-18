@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes</title>
+</head>
+<body>
+	<button onclick="
+		let name = prompt('Enter your name: ');
+		// alert(`Hello ${name}!`)
+		let user = {
+			name,  // same as name:name
+			age: 30
+		};
+		for (key in user){
+			console.log(user.key);
+		}
+		">Name please?</button>
+  <script>
+		
+		const prod2 = {
+			name: 'shirt',
+			fun: function fucntion1() {
+				console.log('function inside object');
+			}
+		}
+		for (key in prod2) {
+			console.log(`${key}: ${prod2[key]}`);
+		}
+		// console.log(prod2.fun());
+		// console.log(typeof console);
+		// console.log(typeof Math);
+
+		/* JSON Objects*/
+		/*
+		- JSON does not support strings
+		*/
+		// console.log(JSON.stringify(prod2))
+		// console.log()
+
+		// prompt("Please enter your name: ")
+  </script>
+</body>
+</html>
