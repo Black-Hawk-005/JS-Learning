@@ -19,15 +19,15 @@
 		">Name please?</button>
   <script>
 		
-		const prod2 = {
-			name: 'shirt',
-			fun: function fucntion1() {
-				console.log('function inside object');
-			}
-		}
-		for (key in prod2) {
-			console.log(`${key}: ${prod2[key]}`);
-		}
+		// const prod2 = {
+		// 	name: 'shirt',
+		// 	fun: function fucntion1() {
+		// 		console.log('function inside object');
+		// 	}
+		// }
+		// for (key in prod2) {
+		// 	console.log(`${key}: ${prod2[key]}`);
+		// }
 		// console.log(prod2.fun());
 		// console.log(typeof console);
 		// console.log(typeof Math);
@@ -40,6 +40,54 @@
 		// console.log()
 
 		// prompt("Please enter your name: ")
+
+		// let obj = {
+		// 	name: "TV",
+		// 	price: "2000"
+		// };
+		// localStorage.setItem("priceList", JSON.stringify(obj));
+		// let priceList = JSON.parse(localStorage.getItem("priceList"));
+		// console.log(priceList);
+
+
+		// console.log('hello'.toUpperCase());
+		// console.log('hello'.substring(2,4));
+		
+		const obj1 = {
+			message: 'hello'
+		};
+		const obj2 = obj1;
+
+		obj1.message = 'welcome';
+		console.log(obj2);
+		console.log(obj1);
+		console.log(obj1===obj2);
+
+		const obj3 = {
+			message: 'welcome',
+			price: 7.99
+		};
+		console.log(obj3 === obj1);
+
+
+		// Destructuring a object
+		const {message, price} = obj3;
+		console.log(message);
+		console.log(price);
+
+		// Shorthand property
+		const obj5 = {
+			message,
+			// method: function fucntion1() {
+			// 	console.log('Hello');
+			// }
+
+			method () {
+				console.log('Hello');
+			}
+		};
+		console.log(obj5);
+		obj5.method();
   </script>
 </body>
 </html>
