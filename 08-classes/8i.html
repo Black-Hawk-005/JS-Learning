@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 8i</title>
+</head>
+<body>
+  <button onclick="
+      playGame('heads');
+    ">
+    heads
+  </button>
+
+  <button onclick="
+      playGame('tails');
+  ">
+    tails
+  </button>
+
+  <button onclick="
+    localStorage.removeItem('score');
+    alert('Score has been reset');
+  ">Reset</button>
+
+  <script>
+    let randomNumber = 0;
+    let result = '';
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    }
+
+    console.log('\nScoreboard');
+    console.log(`Wins: ${score.wins}`);
+    console.log(`Losses: ${score.losses}`);
+
+    function playGame(guess) {
+      randomNumber = Math.random();
+      (randomNumber < 0.5) ? result = 'heads' :  result = 'tails';
+      (guess === result) ? console.log('You win!') : console.log('You lose!');
+      (guess === result) ? score.wins += 1 : score.losses += 1;
+      localStorage.setItem('score',JSON.stringify(score));
+      console.log('\nScoreboard');
+      console.log(`Wins: ${score.wins}`);
+      console.log(`Losses: ${score.losses}`);
+    }
+    
+  </script>
+</body>
+</html>
