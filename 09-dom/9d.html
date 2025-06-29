@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 9d</title>
+</head>
+<body> 
+  <input class="name-input-element" placeholder="Name" type="text"
+    value=""
+    onkeydown="handleKeyDown()">
+  <button class="submit-btn"
+    onclick="nameDisplay()">Submit</button>
+  <p class="name-display-element"></p>
+
+  <script>
+    let name= localStorage.getItem('name') || '';
+    if (name) {
+      document.querySelector('.name-input-element').defaultValue = name;
+      nameDisplay();
+    }
+    function nameDisplay() {
+      name = document.querySelector('.name-input-element').value;
+      document.querySelector('.name-display-element').innerHTML = `Your name is: ${name}`;
+      localStorage.setItem('name', name);
+    }
+
+    function handleKeyDown() {
+      if (event.key === 'Enter') {
+        nameDisplay();
+      }
+    }
+  </script>
+</body>
+</html>
