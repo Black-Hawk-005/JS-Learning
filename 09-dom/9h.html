@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Ex 9h</title>
+</head>
+
+<body>
+  <input class="text-input" placeholder="Type something"
+  onkeyup="handleKeyUp()">
+  <p class="p-element"></p>
+  <script>
+    function handleKeyUp() {
+      document.querySelector('.p-element').innerHTML = document.querySelector('.text-input').value
+    }
+  </script>
+</body>
+</html>
