@@ -1,0 +1,55 @@
+body {
+  background-color: rgb(30, 30, 30);
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: bolder;
+}
+
+.rock-btn, .paper-btn, .scissor-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: inherit;
+  border: 3px white solid;
+  background-size: 50px 50px;
+  background-position: center;
+  background-repeat:no-repeat;
+  cursor: pointer;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+
+}
+
+.rock-btn {
+  background-image: url(img/rock-emoji.png);
+}
+
+.paper-btn {
+  background-image: url(img/paper-emoji.png);
+}
+
+.scissor-btn {
+  background-image: url(img/scissors-emoji.png);
+}
+
+.result {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+
+.reset-btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
