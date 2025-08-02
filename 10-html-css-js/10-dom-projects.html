@@ -39,6 +39,10 @@
       font-size: 15px;
       cursor: pointer;
     }
+
+    .error-text {
+      color: red;
+    }
   </style>
 </head>
 
@@ -86,11 +90,20 @@
     let totalCost= 0;
     function calculateTotalCost() {
       totalCost = 0;
-      document.querySelector('.total-cost-element').innerText = "";
+      let element = document.querySelector('.total-cost-element')
       let cost = Number(document.querySelector('.cost-input').value);
+      console.log(cost);
+      if (cost<0) {
+        element.innerText = 'Error: Cost cannot be less than $0';
+        element.classList.add('error-text');
+        return;
+      }
+      else if (element.classList.contains('error-text') && cost>=0){
+        element.classList.remove('error-text');
+      }
       (cost<40) ? totalCost+=10 : totalCost+=0;
       totalCost += cost;
-      document.querySelector('.total-cost-element').innerText = '$' + totalCost;
+      element.innerText = '$' + totalCost;
     }
 
     function handleKeydown() {

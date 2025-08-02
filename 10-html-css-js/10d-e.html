@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ex 10 d, e</title>
+  <style>
+    .toggle-btn{
+      font-size: 14px;
+      height: 35px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: black;
+      background-color: white;
+      border: solid 1px;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .is-toggled {
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  
+  <button class="toggle-btn" id="gaming-btn" onclick="toggleButton('gaming-btn')">Gaming</button>
+  <button class="toggle-btn" id="music-btn" onclick="toggleButton('music-btn')">Music</button>
+  <button class="toggle-btn" id="tech-btn" onclick="toggleButton('tech-btn')">Tech</button>
+
+  <script>
+    function toggleButton(buttonClass) {
+      let element = document.getElementById(buttonClass);
+      console.log(element.classList);
+      if (! element.classList.contains('is-toggled')) {
+        element.classList.add('is-toggled');
+      }
+      else {
+        element.classList.remove('is-toggled');
+      }
+    }
+  </script>
+</body>
+</html>
